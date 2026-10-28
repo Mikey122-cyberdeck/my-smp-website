@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My SMP | Minecraft Survival</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: Arial, sans-serif;
+  background: #0c0b16; color: white;
+  text-align: center;
+}
+nav {
+  padding: 22px; background: #141224;
+  display: flex; justify-content: space-around;
+  align-items: center; flex-wrap: wrap; gap: 12px;
+}
+nav a { color: #c7baff; text-decoration: none; }
+.hero { padding: 100px 20px 80px; }
+h1 { font-size: clamp(42px, 8vw, 76px); margin: 10px 0; }
+h1 span { color: #a78bfa; }
+p { color: #c6c3d5; line-height: 1.7; }
+button {
+  padding: 15px 25px; border: 0; border-radius: 9px;
+  background: #8b5cf6; color: white; font-weight: bold;
+  cursor: pointer; font-size: 16px;
+}
+.ip {
+  margin: 25px auto; padding: 16px;
+  border: 1px solid #50436f; border-radius: 10px;
+  max-width: 360px; background: #171326;
+}
+.cards {
+  display: flex; justify-content: center;
+  flex-wrap: wrap; gap: 20px; padding: 25px;
+}
+.card {
+  background: #171426; padding: 25px;
+  border: 1px solid #302746; border-radius: 12px;
+  width: 260px;
+}
+footer { padding: 35px; color: #aaa5bc; }
+</style>
+</head>
+<body>
+<nav>
+  <strong>⭐ MY SMP</strong>
+  <a href="#home">Home</a>
+  <a href="#features">Features</a>
+  <a href="#rules">Rules</a>
+  <a href="#discord">Discord</a>
+</nav>
+
+<section class="hero" id="home">
+  <p>YOUR NEXT ADVENTURE STARTS HERE</p>
+  <h1>WELCOME TO <span>MY SMP</span></h1>
+  <p>Explore. Build. Survive. Create your story.</p>
+  <div class="ip">
+    <p>JAVA SERVER IP</p>
+    <strong id="serverip">YOUR-SERVER-IP-HERE</strong>
+    <br><br>
+    <button onclick="copyIP()">COPY SERVER IP</button>
+    <p id="message"></p>
+  </div>
+</section>
+
+<section id="features">
+  <h2>WHY PLAY WITH US?</h2>
+  <div class="cards">
+    <div class="card"><h3>⚔️ Survival</h3>
+      <p>Build your base and explore the world.</p></div>
+    <div class="card"><h3>💎 Economy</h3>
+      <p>Trade with friends and build your wealth.</p></div>
+    <div class="card"><h3>🌍 Community</h3>
+      <p>Meet players and join community events.</p></div>
+  </div>
+</section>
+
+<section id="rules">
+  <h2>SERVER RULES</h2>
+  <p>No cheating · No griefing · Respect everyone</p>
+</section>
+
+<section id="discord">
+  <h2>JOIN OUR COMMUNITY</h2>
+  <p>Our Discord link will be added here.</p>
+</section>
+
+<footer>© 2026 MY SMP · Minecraft community</footer>
+
+<script>
+function copyIP() {
+  const ip = document.getElementById("serverip").textContent;
+  navigator.clipboard.writeText(ip).then(() => {
+    document.getElementById("message").textContent =
+      "IP copied! Join us in Minecraft.";
+  }).catch(() => {
+    document.getElementById("message").textContent =
+      "Please copy the IP manually.";
+  });
+}
+</script>
+</body>
+</html>
